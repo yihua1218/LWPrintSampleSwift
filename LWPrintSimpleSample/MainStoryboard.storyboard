@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Mgh-dI-XDg">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--LWPrintSimpleSample-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" customModule="LWPrintSimpleSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xse-ed-0eY"/>
+                        <viewControllerLayoutGuide type="bottom" id="tdU-Tt-5WP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCZ-wC-XUr">
+                                <rect key="frame" x="48.666666666666657" y="108" width="278" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="EkQ-02-FjI"/>
+                                    <constraint firstAttribute="width" constant="278" id="y5Q-Gq-YtP"/>
+                                </constraints>
+                                <state key="normal" title="Discover Printer">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ghd-35-Vw0" kind="show" identifier="DiscoverPrinter" id="zEM-Jd-xNT"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kYP-W7-bA6">
+                                <rect key="frame" x="12" y="158" width="351" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mR5-6g-fzN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="JVM-tv-nOC"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6r-Bp-yyV">
+                                <rect key="frame" x="171" y="276" width="33" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="33" id="hpq-7d-cqb"/>
+                                    <constraint firstAttribute="height" constant="30" id="y5F-7B-WX2"/>
+                                </constraints>
+                                <state key="normal" title="Print">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doPrint:" destination="2" eventType="touchUpInside" id="9Ub-rt-AXP"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6kw-GB-1Iw" userLabel="Select Data Text">
+                                <rect key="frame" x="139" y="215" width="97" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="XbE-qV-ouV"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="setCustomData:" destination="2" eventType="touchUpInside" id="9NY-H6-Jdv"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIu-gM-WMT" userLabel="Preview Button">
+                                <rect key="frame" x="160.66666666666666" y="342" width="54" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="0Z2-Tb-ga7"/>
+                                    <constraint firstAttribute="height" constant="30" id="mQr-Pc-WeH"/>
+                                </constraints>
+                                <state key="normal" title="Preview"/>
+                                <connections>
+                                    <action selector="doPreview:" destination="2" eventType="touchUpInside" id="8Wl-9D-evz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6kw-GB-1Iw" firstAttribute="centerX" secondItem="xCZ-wC-XUr" secondAttribute="centerX" id="2JD-PE-dZr"/>
+                            <constraint firstItem="I6r-Bp-yyV" firstAttribute="top" secondItem="6kw-GB-1Iw" secondAttribute="bottom" constant="31" id="DI9-IA-adc"/>
+                            <constraint firstItem="xCZ-wC-XUr" firstAttribute="top" secondItem="xse-ed-0eY" secondAttribute="bottom" constant="20" id="H1a-92-OX3"/>
+                            <constraint firstItem="xCZ-wC-XUr" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" id="Kz8-Ye-JIJ"/>
+                            <constraint firstItem="I6r-Bp-yyV" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" id="N9j-ej-xKl"/>
+                            <constraint firstItem="kYP-W7-bA6" firstAttribute="top" secondItem="xCZ-wC-XUr" secondAttribute="bottom" constant="20" id="eWl-Vm-QPz"/>
+                            <constraint firstItem="kYP-W7-bA6" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="-4" id="heK-a7-m7V"/>
+                            <constraint firstItem="LIu-gM-WMT" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" id="jqP-aE-CPA"/>
+                            <constraint firstItem="LIu-gM-WMT" firstAttribute="top" secondItem="I6r-Bp-yyV" secondAttribute="bottom" constant="36" id="myH-6v-D6u"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kYP-W7-bA6" secondAttribute="trailing" constant="-4" id="nhZ-Jb-b08"/>
+                            <constraint firstItem="6kw-GB-1Iw" firstAttribute="top" secondItem="kYP-W7-bA6" secondAttribute="bottom" constant="27" id="wEk-AS-N64"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="LWPrintSimpleSample" id="TqJ-dB-Aup"/>
+                    <connections>
+                        <outlet property="dataTextField" destination="kYP-W7-bA6" id="VuQ-mp-lwG"/>
+                        <outlet property="discoverButton" destination="xCZ-wC-XUr" id="AXe-mx-HGE"/>
+                        <outlet property="previewButton" destination="LIu-gM-WMT" id="gj1-8S-h6f"/>
+                        <outlet property="printButton" destination="I6r-Bp-yyV" id="VrD-io-NSI"/>
+                        <outlet property="selectDataText" destination="6kw-GB-1Iw" id="tc6-jE-JV2"/>
+                        <segue destination="MQ9-zg-deo" kind="show" identifier="preview" id="xzg-FL-baU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="630" y="146"/>
+        </scene>
+        <!--Discover Printer-->
+        <scene sceneID="USY-XX-zIO">
+            <objects>
+                <tableViewController id="ghd-35-Vw0" customClass="DiscoverTableViewController" customModule="LWPrintSimpleSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pzW-cR-O3N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DiscoverPrinteCell" textLabel="ErF-4o-1Cy" detailTextLabel="QMt-JV-WsW" style="IBUITableViewCellStyleSubtitle" id="bbT-13-Off">
+                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bbT-13-Off" id="Ceu-bz-Y0f">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ErF-4o-1Cy">
+                                            <rect key="frame" x="16.000000000000004" y="3" width="38.333333333333336" height="21.666666666666668"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QMt-JV-WsW">
+                                            <rect key="frame" x="15.999999999999996" y="24.666666666666671" width="49.666666666666664" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.32156862749999998" green="0.40000000000000002" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Discover Printer" id="u1j-H3-hQ2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O9H-eh-CK8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1846" y="146"/>
+        </scene>
+        <!--Preview-->
+        <scene sceneID="m0N-R6-LFF">
+            <objects>
+                <viewController storyboardIdentifier="previewIdentity" id="MQ9-zg-deo" customClass="PreviewViewController" customModule="LWPrintSimpleSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OPF-P7-7UF"/>
+                        <viewControllerLayoutGuide type="bottom" id="VTF-fh-atL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hAR-eG-Zxq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QYo-ye-VsJ">
+                                <rect key="frame" x="0.0" y="88" width="375" height="682"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Preview" id="BC0-ZF-PTx"/>
+                    <connections>
+                        <outlet property="imageView" destination="QYo-ye-VsJ" id="qY3-dA-wLk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KFU-8v-etu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1845.5999999999999" y="935.46798029556658"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="p9y-aH-8Xb">
+            <objects>
+                <navigationController id="Mgh-dI-XDg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4eu-Er-TNb">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="a37-VP-GWx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CYt-gO-jDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-521" y="146"/>
+        </scene>
+    </scenes>
+</document>
