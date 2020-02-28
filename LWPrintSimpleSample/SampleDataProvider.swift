@@ -13,16 +13,34 @@ class SampleDataProvider: LWPrintDataProvider
     {
         case string
         case qrCode
+        case qrCodeX10
     }
     
     // MARK: public member
     var formType: FormType = .string
     var stringData: String? = "String"
     var qrCodeData: String? = "QRCode"
+    var qrCodeX10Data: String? = "QRCodeX10"
+    
+    var qrCodeX10DataArray: [String] = [
+        "https://yihua.app/28utTe",
+        "https://yihua.app/PrwV7u",
+        "https://yihua.app/kNbG5R",
+        "https://yihua.app/ClMpBf",
+        "https://yihua.app/jPqsW1",
+        "https://yihua.app/bqHsI8",
+        "https://yihua.app/7ZgceT",
+        "https://yihua.app/pHUaSz",
+        "https://yihua.app/ghEmny",
+        "https://yihua.app/6tl08N",
+    ]
+    
+    var codeIndex = 0
     
     // MARK: private member
     fileprivate var formDataString: [String: AnyObject]?
     fileprivate var formDataQRCode: [String: AnyObject]?
+    fileprivate var formDataQRCodeX10: [String: AnyObject]?
     
     // MARK: override method
     override init()
@@ -34,6 +52,10 @@ class SampleDataProvider: LWPrintDataProvider
         if let _formPath = Bundle.main.path(forResource: "FormDataQRCode", ofType: "plist")
         {
             formDataQRCode = NSDictionary(contentsOfFile: _formPath) as? [String: AnyObject]
+        }
+        if let _formPath = Bundle.main.path(forResource: "FormDataQRCodeX10", ofType: "plist")
+        {
+            formDataQRCodeX10 = NSDictionary(contentsOfFile: _formPath) as? [String: AnyObject]
         }
     }
     
@@ -81,6 +103,8 @@ class SampleDataProvider: LWPrintDataProvider
             formData = formDataString
         case .qrCode:
             formData = formDataQRCode
+        case .qrCodeX10:
+            formData = formDataQRCodeX10
         }
         
         return formData
@@ -97,6 +121,12 @@ class SampleDataProvider: LWPrintDataProvider
         else if contentName == "QRCode"
         {
             return qrCodeData as AnyObject
+        }
+        else if contentName == "QRCodeX10"
+        {
+            let tempIndex = codeIndex % qrCodeX10DataArray.count
+            codeIndex += 1
+            return qrCodeX10DataArray[tempIndex] as AnyObject
         }
         return nil
     }

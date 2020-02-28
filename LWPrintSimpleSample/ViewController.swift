@@ -23,7 +23,7 @@ class ViewController: UIViewController, LWPrintDelegate, DiscoverTableViewContro
     fileprivate var processing: Bool = false
     fileprivate var printerInfo: [String: AnyObject]?
     
-    let dataList = ["Text", "QRCode", "Img1", "Img2"];
+    let dataList = ["Text", "QRCode", "QRCodeX10", "Img1", "Img2"];
     var pickerView: UIPickerView = UIPickerView()
     var selectData:DataType = .text
     
@@ -37,6 +37,7 @@ class ViewController: UIViewController, LWPrintDelegate, DiscoverTableViewContro
     {
         case text
         case qrcode
+        case qrcodex10
         case img1
         case img2
     }
@@ -91,6 +92,9 @@ class ViewController: UIViewController, LWPrintDelegate, DiscoverTableViewContro
         case .qrcode:
             dataTextField.text = sharedDataProvider().qrCodeData
             break;
+        case .qrcodex10:
+            dataTextField.text = sharedDataProvider().qrCodeX10Data
+            break;
         default:
             dataTextField.text = ""
             break;
@@ -105,9 +109,12 @@ class ViewController: UIViewController, LWPrintDelegate, DiscoverTableViewContro
             ret = .qrcode
             break
         case 2:
-            ret = .img1
+            ret = .qrcodex10
             break
         case 3:
+            ret = .img1
+            break
+        case 4:
             ret = .img2
             break
         default:
@@ -164,6 +171,10 @@ class ViewController: UIViewController, LWPrintDelegate, DiscoverTableViewContro
         if selectData == .qrcode
         {
             sharedDataProvider().qrCodeData = dataTextField.text
+        }
+        else if selectData == .qrcodex10
+        {
+            sharedDataProvider().qrCodeX10Data = dataTextField.text
         }
         else if selectData == .text
         {
@@ -256,6 +267,10 @@ class ViewController: UIViewController, LWPrintDelegate, DiscoverTableViewContro
         {
             sharedDataProvider().qrCodeData = dataTextField.text
         }
+        else if selectData == .qrcodex10
+        {
+            sharedDataProvider().qrCodeX10Data = dataTextField.text
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
@@ -323,6 +338,9 @@ class ViewController: UIViewController, LWPrintDelegate, DiscoverTableViewContro
                 {
                 case .qrcode:
                     dataProvider.formType = .qrCode
+                    break
+                case .qrcodex10:
+                    dataProvider.formType = .qrCodeX10
                     break
                 case .img1:
                     image = UIImage(named: "work_108x108.png")

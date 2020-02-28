@@ -22,6 +22,7 @@
 		0EA720891B5495F500683E1A /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB07825E17504AD50033AAC7 /* ExternalAccessory.framework */; };
 		0EA720EE1B549E5C00683E1A /* SampleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA720ED1B549E5C00683E1A /* SampleDataProvider.swift */; };
 		0EFB18F11BAC04DB006E32E2 /* FormDataQRCode.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EFB18F01BAC04DB006E32E2 /* FormDataQRCode.plist */; };
+		0FD7B390240884AC00820B03 /* FormDataQRCodeX10.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FD7B38F240884AC00820B03 /* FormDataQRCodeX10.plist */; };
 		F7467E472209575800F38C25 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7467E462209575800F38C25 /* PreviewViewController.swift */; };
 		F78F568C220A62EC005736C3 /* image_120x108.png in Resources */ = {isa = PBXBuildFile; fileRef = F78F568A220A62EC005736C3 /* image_120x108.png */; };
 		F78F5690220A80B7005736C3 /* work_108x108.png in Resources */ = {isa = PBXBuildFile; fileRef = F78F568F220A80B6005736C3 /* work_108x108.png */; };
@@ -44,6 +45,7 @@
 		0EA7202D1B54926B00683E1A /* LWPrintDiscoverPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWPrintDiscoverPrinter.h; sourceTree = "<group>"; };
 		0EA720ED1B549E5C00683E1A /* SampleDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleDataProvider.swift; sourceTree = "<group>"; };
 		0EFB18F01BAC04DB006E32E2 /* FormDataQRCode.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FormDataQRCode.plist; sourceTree = "<group>"; };
+		0FD7B38F240884AC00820B03 /* FormDataQRCodeX10.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FormDataQRCodeX10.plist; sourceTree = "<group>"; };
 		6F790A0F1991F6DE002E443A /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		EB07825E17504AD50033AAC7 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		EBD4DE8F16E6F78B002B01E2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -79,6 +81,7 @@
 				0E1EA59D1B996706000B4CC2 /* LWPrintSampleSwift-Bridging-Header.h */,
 				0E1EA5551B99657C000B4CC2 /* FormDataString.plist */,
 				0EFB18F01BAC04DB006E32E2 /* FormDataQRCode.plist */,
+				0FD7B38F240884AC00820B03 /* FormDataQRCodeX10.plist */,
 				0E1EA5571B99657C000B4CC2 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -173,7 +176,7 @@
 				TargetAttributes = {
 					0EA720041B53BD1600683E1A = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = HRHJNK8UJG;
+						DevelopmentTeam = XWVVBNA9PR;
 						LastSwiftMigration = 1010;
 					};
 				};
@@ -183,6 +186,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -201,6 +205,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FD7B390240884AC00820B03 /* FormDataQRCodeX10.plist in Resources */,
 				0E1EA59F1B9967D7000B4CC2 /* LaunchScreen.xib in Resources */,
 				0E1EA5951B9965D4000B4CC2 /* Images.xcassets in Resources */,
 				0E1EA5961B9965D4000B4CC2 /* MainStoryboard.storyboard in Resources */,
@@ -240,7 +245,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = HRHJNK8UJG;
+				DEVELOPMENT_TEAM = XWVVBNA9PR;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -252,7 +257,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/LWPrintSimpleSample/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -264,11 +269,12 @@
 					"-all_load",
 					"-lstdc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.epson.lwprint.sample.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = app.yihua.lwprint.sample.LWPrintSimpleSample;
 				PRODUCT_NAME = LWPrintSimpleSample;
 				SWIFT_OBJC_BRIDGING_HEADER = "LWPrintSimpleSample/Supporting Files/LWPrintSampleSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -283,7 +289,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = HRHJNK8UJG;
+				DEVELOPMENT_TEAM = XWVVBNA9PR;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -292,7 +298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/LWPrintSimpleSample/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -304,10 +310,11 @@
 					"-all_load",
 					"-lstdc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.epson.lwprint.sample.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = app.yihua.lwprint.sample.LWPrintSimpleSample;
 				PRODUCT_NAME = LWPrintSimpleSample;
 				SWIFT_OBJC_BRIDGING_HEADER = "LWPrintSimpleSample/Supporting Files/LWPrintSampleSwift-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
